@@ -33,17 +33,8 @@ const startApolloServer = async () => {
   // integrate our Apollo server with the Express application as middleware
   server.applyMiddleware({ app, path: "/graphql" });
 
-  console.log("NODE ENV IS", process.env.NODE_ENV);
   if (process.env.NODE_ENV === "production") {
-    const result = require("fs").readdirSync("./client");
-
-    console.log("Files in ./client");
-    result.forEach((file) => {
-      console.log("File:", file);
-    });
-
     // Only enable this in production
-    // app.use("/", express.static("../client/build"));
     app.use("/", express.static("./client/build"));
   } else {
     app.use("/", proxy("127.0.0.1:3000"));
