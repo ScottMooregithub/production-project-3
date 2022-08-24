@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /*main colors */
+  --primary-color: #262523;
+  --secondary-color: #85A2A6;
+  --tertiary-color: #F25252;
+}
+
+@font-face {
+  font-family: "Romana";
+  src: local("Romana"), url(./assets/font/romana.ttf) format("truetype");
+}
+
+body {
+  font-family: "Romana";
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  background-color: #F2F2F2;
+}
+
+nav a:hover {
+  color: #F25252;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+
+}
+
+#root>nav>div>div>span:hover {
+  color: #F25252;
+  cursor: pointer;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.landing-page {
+  margin-top: 5%;
+}
+
+
+.share-button {
+  display: flex;
+  flex-wrap: wrap;
+  cursor: pointer;
+  list-style: none;
+  font-size: 40px;
+  color: #F2F2F2;
+  display: inline-block;
+  padding: 15px;
+}
+
+.share-button:hover {
+  color: #F25252;
+  opacity: 0.5;
+  transition: .5s ease;
+}
+
+.modal-logo {
+  cursor: pointer;
+  list-style: none;
+  font-size: 40px;
+  color: #85A2A6;
+  display: inline-block;
+  margin: 15px;
+  justify-content: space-between;
+
+
+}
