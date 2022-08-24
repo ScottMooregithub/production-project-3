@@ -1,3 +1,4 @@
+const path = require("path");
 const proxy = require("express-http-proxy");
 const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
@@ -36,7 +37,11 @@ const startApolloServer = async () => {
 
   if (process.env.NODE_ENV === "production") {
     // Only enable this in production
+
     app.use("/", express.static("./client/build"));
+    app.use("/*", (req, res) => {
+      res.sendFile(path.resolve("./client/build/index.html"));
+    });
   } else {
     app.use("/", proxy("127.0.0.1:3000"));
   }
