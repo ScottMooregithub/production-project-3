@@ -10,7 +10,8 @@ const app = express();
 // import our typeDefs and resolvers
 const { typeDefs, resolvers } = require("./schemas");
 const { authMiddleware } = require("./utils/auth");
-// const db = require("./config/connection");
+
+require("./config/connection");
 
 // Express server
 const PORT = process.env.PORT || 3001;
