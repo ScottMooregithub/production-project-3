@@ -33,6 +33,7 @@ const startApolloServer = async () => {
   // integrate our Apollo server with the Express application as middleware
   server.applyMiddleware({ app, path: "/graphql" });
 
+  console.log("NODE ENV IS", process.env.NODE_ENV);
   if (process.env.NODE_ENV === "production") {
     // Only enable this in production
     app.use("/", express.static("../client/build"));
