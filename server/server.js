@@ -19,6 +19,7 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   context: authMiddleware,
+  introspection: true,
   plugins: [ApolloServerPluginLandingPageGraphQLPlayground],
 });
 
